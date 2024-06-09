@@ -23,10 +23,11 @@ public class UserHomePageStepDef extends Base {
     }
     @Given("Login by entering valid {string} and {string} on the SignIn page.")
     public void login_by_entering_valid_and_on_the_sign_ın_page(String email, String password) {
-        ReusableMethods.wait(3);
+        ReusableMethods.wait(2);
         ReusableMethods.loginUser(ConfigReader.getProperty(email), ConfigReader.getProperty(password));
+        ReusableMethods.wait(2);
         userHomePage.eptticonClose.click();
-        ReusableMethods.wait(1);
+
     }
     @Given("Verify that the body redirect buttons {string},{string},{string},{string},{string},are working.")
     public void clickButton(String Facebook, String Twitter, String Instagram, String Linkedin, String YouTube) {
@@ -34,7 +35,7 @@ public class UserHomePageStepDef extends Base {
         for (String button : buttonArray) {
             switch (button) {
                 case "Facebook":
-                    ReusableMethods.wait(1);
+                    ReusableMethods.wait(2);
                     ReusableMethods.clickAndVerify(userHomePage.linkFacebook);
                     expectedUrl = "https://www.facebook.com/epttavm";
                     for (String windowHandle : Driver.getDriver().getWindowHandles()) {
@@ -66,7 +67,7 @@ public class UserHomePageStepDef extends Base {
                     }
                     actualUrl = Driver.getDriver().getCurrentUrl();
                     assertEquals(expectedUrl, actualUrl);
-                    ReusableMethods.wait(3);
+                    ReusableMethods.wait(2);
                     Driver.getDriver().close();
                     Driver.getDriver().switchTo().window(Driver.getDriver().getWindowHandles().iterator().next());
                     break;

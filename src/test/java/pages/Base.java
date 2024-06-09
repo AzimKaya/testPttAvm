@@ -8,6 +8,7 @@ public abstract class Base {
   public static String            actualUrl;
   public static String          expectedUrl;
   public static UserHomePage   userHomePage;
+
   public static void initialize() {
           userHomePage = new UserHomePage();
   }

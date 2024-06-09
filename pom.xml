@@ -110,7 +110,7 @@
                         <version>1.9.7</version>
                     </dependency>
                 </dependencies>
-            </plugin><!-- bir method fail olsa bile geriye kalan method'larin calismaya devam etmesi icin -->
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -118,7 +118,7 @@
                 <configuration>
                     <parallel>classes</parallel>
                     <forkMode>perthread</forkMode>
-                    <threadCount>1</threadCount> <!-- Ayni anda calisacak thread sayisi -->
+                    <threadCount>1</threadCount>
                     <reuseForks>false</reuseForks>
                     <argLine>-Duser.language=en</argLine>
                     <argLine>-Xmx1024m</argLine>
@@ -131,13 +131,11 @@
                     </systemProperties>
                     <includes>
                         <include>**/runners/*Runner*.java</include>
-                        <!-- runners package altinda
-                             calismasini istedigimiz Runner'larin
-                             isimlerindeki ortak bolumu yaziyoruz-->
+
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
-            </plugin> <!-- Paralel calismayi organize ediyor -->
+            </plugin>
         </plugins>
     </build>
 </project>

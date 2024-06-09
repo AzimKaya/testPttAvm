@@ -37,7 +37,6 @@ protected static utils.ReusableMethods ReusableMethods;
         @FindBy(xpath = "//*[@aria-label='YouTube']")
         public WebElement linkYouTube;//Hompagefooter ==>> YouTube link button
 
-
     }
 
 
